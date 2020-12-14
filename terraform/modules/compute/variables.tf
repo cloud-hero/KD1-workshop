@@ -20,3 +20,4 @@ variable "gce_ssh_user" {
 
 variable "network" {}
 variable "subnetwork" {}
+variable "network_ip" {}

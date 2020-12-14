@@ -17,6 +17,7 @@ module "k8s-master-1" {
     machine_type            = "n1-standard-2"
     network                 = module.vpc.network_name
     subnetwork              = module.vpc.k8s_subnet_1a_name
+    network_ip              = "10.0.0.2"
     zone                    = "${var.region}-a"
     gce_ssh_pub_key_file    = var.gce_ssh_pub_key_file
     gce_ssh_user            = var.gce_ssh_user
@@ -28,6 +29,7 @@ module "k8s-master-2" {
     machine_type            = "n1-standard-2"
     network                 = module.vpc.network_name
     subnetwork              = module.vpc.k8s_subnet_1b_name
+    network_ip              = "10.1.0.2"
     zone                    = "${var.region}-b"
     gce_ssh_pub_key_file    = var.gce_ssh_pub_key_file
     gce_ssh_user            = var.gce_ssh_user
@@ -39,6 +41,7 @@ module "k8s-master-3" {
     machine_type            = "n1-standard-2"
     network                 = module.vpc.network_name
     subnetwork              = module.vpc.k8s_subnet_1c_name
+    network_ip              = "10.2.0.2"
     zone                    = "${var.region}-c"
     gce_ssh_pub_key_file    = var.gce_ssh_pub_key_file
     gce_ssh_user            = var.gce_ssh_user
@@ -50,6 +53,7 @@ module "k8s-worker-1" {
     machine_type            = "n1-standard-1"
     network                 = module.vpc.network_name
     subnetwork              = module.vpc.k8s_subnet_1a_name
+    network_ip              = "10.0.0.3"
     zone                    = "${var.region}-a"
     gce_ssh_pub_key_file    = var.gce_ssh_pub_key_file
     gce_ssh_user            = var.gce_ssh_user
@@ -61,6 +65,7 @@ module "k8s-worker-2" {
     machine_type            = "n1-standard-1"
     network                 = module.vpc.network_name
     subnetwork              = module.vpc.k8s_subnet_1b_name
+    network_ip              = "10.1.0.3"
     zone                    = "${var.region}-b"
     gce_ssh_pub_key_file    = var.gce_ssh_pub_key_file
     gce_ssh_user            = var.gce_ssh_user
@@ -72,6 +77,7 @@ module "k8s-worker-3" {
     machine_type            = "n1-standard-1"
     network                 = module.vpc.network_name
     subnetwork              = module.vpc.k8s_subnet_1c_name
+    network_ip              = "10.2.0.3"
     zone                    = "${var.region}-c"
     gce_ssh_pub_key_file    = var.gce_ssh_pub_key_file
     gce_ssh_user            = var.gce_ssh_user
@@ -83,6 +89,7 @@ module "k8s-lb-1" {
     machine_type            = "n1-standard-1"
     network                 = module.vpc.network_name
     subnetwork              = module.vpc.k8s_subnet_1a_name
+    network_ip              = "10.0.0.4"
     zone                    = "${var.region}-a"
     gce_ssh_pub_key_file    = var.gce_ssh_pub_key_file
     gce_ssh_user            = var.gce_ssh_user

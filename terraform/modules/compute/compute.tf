@@ -15,6 +15,7 @@ resource "google_compute_instance" "node" {
     network     = var.network
     subnetwork  = var.subnetwork
     access_config {}
+    network_ip  = var.network_ip
   }
 
   metadata_startup_script = "${file("${path.module}/bootstrap.sh")}"
