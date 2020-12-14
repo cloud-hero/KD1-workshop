@@ -14,6 +14,7 @@ resource "google_compute_instance" "node" {
   network_interface {
     network     = var.network
     subnetwork  = var.subnetwork
+    access_config {}
   }
 
   metadata = {
