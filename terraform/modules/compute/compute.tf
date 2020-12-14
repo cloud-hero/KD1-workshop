@@ -17,6 +17,8 @@ resource "google_compute_instance" "node" {
     access_config {}
   }
 
+  metadata_startup_script = "${file("${path.module}/bootstrap.sh")}"
+
   metadata = {
     ssh-keys = "${var.gce_ssh_user}:${file(var.gce_ssh_pub_key_file)}"
   }
