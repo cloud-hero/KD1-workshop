@@ -76,19 +76,6 @@ module "k8s-worker-2" {
     gce_ssh_user            = var.gce_ssh_user
 }
 
-module "k8s-worker-3" {
-    source                  = "./modules/compute"
-    name                    = "k8s-worker-3"
-    machine_type            = "n1-standard-1"
-    network                 = module.vpc.network_name
-    subnetwork              = module.vpc.k8s_subnet_1c_name
-    network_ip              = "10.2.0.3"
-    metadata_startup_script = "${file("bootstrap-kube.sh")}"
-    zone                    = "${var.region}-c"
-    gce_ssh_pub_key_file    = var.gce_ssh_pub_key_file
-    gce_ssh_user            = var.gce_ssh_user
-}
-
 module "k8s-lb-1" {
     source                  = "./modules/compute"
     name                    = "k8s-lb-1"
