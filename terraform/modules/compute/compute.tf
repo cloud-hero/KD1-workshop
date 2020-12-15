@@ -18,7 +18,7 @@ resource "google_compute_instance" "node" {
     network_ip  = var.network_ip
   }
 
-  metadata_startup_script = "${file("${path.module}/bootstrap.sh")}"
+  metadata_startup_script = var.metadata_startup_script
 
   metadata = {
     ssh-keys = "${var.gce_ssh_user}:${file(var.gce_ssh_pub_key_file)}"
