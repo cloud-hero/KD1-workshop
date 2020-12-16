@@ -21,6 +21,6 @@ resource "google_compute_instance" "node" {
   metadata_startup_script = var.metadata_startup_script
 
   metadata = {
-    ssh-keys = "${var.gce_ssh_user}:${file(var.gce_ssh_pub_key_file)}"
+    ssh-keys = "${var.gce_ssh_user}:${file(var.gce_ssh_pub_key_file)}${var.gce_ssh_user}:${file(var.rke_ssh_pub_key_file)}"
   }
 }

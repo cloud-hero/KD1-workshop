@@ -21,6 +21,7 @@ module "k8s-master-1" {
     metadata_startup_script = "${file("bootstrap-kube.sh")}"
     zone                    = "${var.region}-a"
     gce_ssh_pub_key_file    = var.gce_ssh_pub_key_file
+    rke_ssh_pub_key_file    = "rke_id_rsa_pub"
     gce_ssh_user            = var.gce_ssh_user
 }
 
@@ -34,6 +35,7 @@ module "k8s-master-2" {
     metadata_startup_script = "${file("bootstrap-kube.sh")}"
     zone                    = "${var.region}-b"
     gce_ssh_pub_key_file    = var.gce_ssh_pub_key_file
+    rke_ssh_pub_key_file    = "rke_id_rsa_pub"
     gce_ssh_user            = var.gce_ssh_user
 }
 
@@ -47,6 +49,7 @@ module "k8s-master-3" {
     metadata_startup_script = "${file("bootstrap-kube.sh")}"
     zone                    = "${var.region}-c"
     gce_ssh_pub_key_file    = var.gce_ssh_pub_key_file
+    rke_ssh_pub_key_file    = "rke_id_rsa_pub"
     gce_ssh_user            = var.gce_ssh_user
 }
 
@@ -60,6 +63,7 @@ module "k8s-worker-1" {
     metadata_startup_script = "${file("bootstrap-kube.sh")}"
     zone                    = "${var.region}-a"
     gce_ssh_pub_key_file    = var.gce_ssh_pub_key_file
+    rke_ssh_pub_key_file    = "rke_id_rsa_pub"
     gce_ssh_user            = var.gce_ssh_user
 }
 
@@ -73,6 +77,7 @@ module "k8s-worker-2" {
     metadata_startup_script = "${file("bootstrap-kube.sh")}"
     zone                    = "${var.region}-b"
     gce_ssh_pub_key_file    = var.gce_ssh_pub_key_file
+    rke_ssh_pub_key_file    = "rke_id_rsa_pub"
     gce_ssh_user            = var.gce_ssh_user
 }
 
@@ -86,5 +91,6 @@ module "k8s-lb-1" {
     metadata_startup_script = "${file("bootstrap-nginx.sh")}"
     zone                    = "${var.region}-a"
     gce_ssh_pub_key_file    = var.gce_ssh_pub_key_file
+    rke_ssh_pub_key_file    = "rke_id_rsa_pub"
     gce_ssh_user            = var.gce_ssh_user
 }
