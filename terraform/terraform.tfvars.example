@@ -1,4 +1,4 @@
 project_id              = ""
-region                  = ""
-gce_ssh_user            = ""
+region                  = "europe-west3"
+gce_ssh_user            = "root"
 gce_ssh_pub_key_file    = ""
