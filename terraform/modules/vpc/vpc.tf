@@ -4,5 +4,5 @@ resource "google_compute_network" "vpc" {
 }
 
 output "network_name" {
-  value =google_compute_network.vpc.name
+  value = google_compute_network.vpc.name
 }
